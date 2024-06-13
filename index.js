@@ -1,5 +1,6 @@
 const TelegramBot = require('node-telegram-bot-api');
 const redis = require('redis')
+require('dotenv').config()
 const client = redis.createClient()
 client.connect()
 
@@ -9,7 +10,7 @@ const components = require('./components')
 const messages = require('./utils/message')
 
 // configs
-const token = '7370233482:AAGPRK0tcdbOAvRAlcbDralsWz5jksKidWM';
+const token = process.env.TOKEN;
 const bot = new TelegramBot(token, {polling: true});
 
 
