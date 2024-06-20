@@ -7,7 +7,7 @@ const home_menu = (bot, chatId) => {
                     {text:'google engine (🇺🇸)', callback_data:'google'}
                 ],
                 [
-                    {text:'farazin engine (🇮🇷)', callback_data:'farazin'}
+                    {text:'farazin engine (🇮🇷)', callback_data:'faraazin'}
                 ]
             ]
         }
@@ -16,7 +16,9 @@ const home_menu = (bot, chatId) => {
 }
 
 const language_menu = (bot, client, chatId, messageId, textMessage, field, command, inlineKeyboard) => {
-    client.set(`user:${chatId}:${field}`, command)
+    client.set(`user:${chatId}:${field}`, command, {
+        EX: 180
+    })
     bot.editMessageText(textMessage, {
         chat_id:chatId,
         message_id: messageId,
@@ -24,7 +26,15 @@ const language_menu = (bot, client, chatId, messageId, textMessage, field, comma
     })
 }
 
+const send_languge = (bot, client, chatId, field, language, textMessage) => {
+    client.set(`user:${chatId}:${field}`, language, {
+        EX: 180
+    })
+    bot.sendMessage(chatId, textMessage)
+}
+
 module.exports = {
     home_menu,
-    language_menu
+    language_menu,
+    send_languge
 }

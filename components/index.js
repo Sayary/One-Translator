@@ -22,7 +22,7 @@ const microsoftDestinationLanguage = {
     }
 }
 
-const farazinDestinationLanguage = {
+const faraazinDestinationLanguage = {
     reply_markup: {
         inline_keyboard: [
             [
@@ -36,5 +36,5 @@ const farazinDestinationLanguage = {
 module.exports = {
     googleDestinationLanguage,
     microsoftDestinationLanguage,
-    farazinDestinationLanguage
+    faraazinDestinationLanguage
 }
