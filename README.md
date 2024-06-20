@@ -7,7 +7,7 @@ This is a telegram bot translator built with the node-telegram-bot-api library a
 In the development of the source code of this robot, we have tried to develop the project in the most optimal way possible
 
 ## configs
-open `.env` file an and set this two values 
+open `.env` file an and set this three values 
 
     TOKEN=''         # this is telegram bot token 
     apiTOKEN=''      # this is one-api token
