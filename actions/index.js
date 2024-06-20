@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const home_menu = (bot, chatId) => {
     const inlineKeyboard = {
         reply_markup: {
@@ -17,7 +19,7 @@ const home_menu = (bot, chatId) => {
 
 const language_menu = (bot, client, chatId, messageId, textMessage, field, command, inlineKeyboard) => {
     client.set(`user:${chatId}:${field}`, command, {
-        EX: 180
+        EX: process.env.TIMER
     })
     bot.editMessageText(textMessage, {
         chat_id:chatId,
@@ -28,7 +30,7 @@ const language_menu = (bot, client, chatId, messageId, textMessage, field, comma
 
 const send_languge = (bot, client, chatId, field, language, textMessage) => {
     client.set(`user:${chatId}:${field}`, language, {
-        EX: 180
+        EX: process.env.TIMER
     })
     bot.sendMessage(chatId, textMessage)
 }
