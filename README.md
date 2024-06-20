@@ -12,5 +12,11 @@ open `.env` file an and set this three values
     TOKEN=''         # this is telegram bot token 
     apiTOKEN=''      # this is one-api token
     TIMER=           # this is timer for destroy engine and language and required to set new engine (set integer data by second)
+
 ## Usage
 open terminal and write `npm install` to install all dependencies After the installation is complete, enter the `nodemon` or `node index.js` command in the terminal to run the project
+
+## Resources Used
+Translate API: https://one-api.ir/api-translate
+
+Telegram Api Pkg: https://github.com/python-telegram-bot/python-telegram-bot
